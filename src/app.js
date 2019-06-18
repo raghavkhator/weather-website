@@ -52,14 +52,16 @@ app.get('/weather',(req,res)=>{
                         error
                     })
                 }else{
-                    forecast(data,(error,forecastData)=>{
+                    forecast(data,(error,{rep,high,low})=>{
                         if(error){
                             return res.send({
                                 error
                             })
                         }else{
                             res.send({
-                                forecastData,
+                                forecastData:rep,
+                                high,
+                                low,
                                 location:data.location,
                                 address:req.query.address
                             })
@@ -69,13 +71,6 @@ app.get('/weather',(req,res)=>{
             })
             
         }
-})
-
-app.get('/product',(req,res)=>{
-    console.log(req.query)
-    res.send({
-        products:[] 
-    })
 })
 
 app.get('/help/*',(req,res)=>{
