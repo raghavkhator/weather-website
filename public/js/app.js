@@ -23,7 +23,7 @@ weatherForm.addEventListener('submit',(e)=>{
         messageOne.textContent=data.location//+'\n'+data.location+"\n"+data.address
         messageTwo.textContent=data.forecastData
         messageThree.textContent='Today\'s Highest: '+data.high
-        messageFour.textContent='Today\'s lowest: '+data.low
+        messageFour.textContent='Today\'s Lowest: '+data.low
     })
 })
 
